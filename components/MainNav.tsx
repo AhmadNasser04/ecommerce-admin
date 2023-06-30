@@ -19,11 +19,6 @@ export default function MainNav({
       active: pathName === `/${params.storeId}`,
     },
     {
-      label: "Billboards",
-      href: `/${params.storeId}/billboards`,
-      active: pathName === `/${params.storeId}/billboards`,
-    },
-    {
       label: "Categories",
       href: `/${params.storeId}/categories`,
       active: pathName === `/${params.storeId}/categories`,
@@ -51,7 +46,12 @@ export default function MainNav({
   ];
 
   return (
-    <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)}>
+    <nav
+      className={cn(
+        "overflow-x-scroll md:overflow-x-auto flex items-center space-x-4 lg:space-x-6",
+        className
+      )}
+    >
       {routes.map((route) => (
         <Link
           href={route.href}

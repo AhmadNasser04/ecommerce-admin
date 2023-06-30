@@ -8,14 +8,14 @@ import { DataTable } from "@/components/ui/data-table";
 import { Separator } from "@/components/ui/separator";
 import { ApiList } from "@/components/ui/api-list";
 
-import { ProductColumn, columns } from "./columns";
+import { columns, ColorColumn } from "@/components/color/Columns";
 import Heading from "@/components/Heading";
 
-interface ProductsClientProps {
-  data: ProductColumn[];
+interface ColorClientProps {
+  data: ColorColumn[];
 }
 
-export const ProductsClient: React.FC<ProductsClientProps> = ({ data }) => {
+export const ColorClient: React.FC<ColorClientProps> = ({ data }) => {
   const params = useParams();
   const router = useRouter();
 
@@ -23,18 +23,18 @@ export const ProductsClient: React.FC<ProductsClientProps> = ({ data }) => {
     <>
       <div className="flex items-center justify-between">
         <Heading
-          title={`Products (${data.length})`}
-          description="Manage products for your store"
+          title={`Colors (${data.length})`}
+          description="Manage colors for your products"
         />
-        <Button onClick={() => router.push(`/${params.storeId}/products/new`)}>
+        <Button onClick={() => router.push(`/${params.storeId}/colors/new`)}>
           <Plus className="w-4 h-4 mr-2" /> Add New
         </Button>
       </div>
       <Separator />
       <DataTable searchKey="name" columns={columns} data={data} />
-      <Heading title="API" description="API Calls for Products" />
+      <Heading title="API" description="API Calls for Colors" />
       <Separator />
-      <ApiList entityName="products" entityIdName="productId" />
+      <ApiList entityName="colors" entityIdName="colorId" />
     </>
   );
 };

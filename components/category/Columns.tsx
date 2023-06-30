@@ -8,7 +8,7 @@ import { CellAction } from "@/components/category/Actions";
 export type CategoryColumn = {
   id: string;
   name: string;
-  billboardLabel: string;
+  slogan: string;
   createdAt: string;
 };
 
@@ -18,9 +18,8 @@ export const columns: ColumnDef<CategoryColumn>[] = [
     header: "Name",
   },
   {
-    accessorKey: "billboard",
-    header: "Billboard",
-    cell: ({ row }) => row.original.billboardLabel,
+    accessorKey: "slogan",
+    header: "Slogan",
   },
   {
     accessorKey: "createdAt",

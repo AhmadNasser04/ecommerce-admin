@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import { CellAction } from "./cell-action";
+import { CellAction } from "@/components/product/Actions";
 
 export type ProductColumn = {
   id: string;

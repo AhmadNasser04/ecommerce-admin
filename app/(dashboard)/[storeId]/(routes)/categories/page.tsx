@@ -14,9 +14,6 @@ const CategoriesPage = async ({
     where: {
       storeId: params.storeId,
     },
-    include: {
-      billboard: true,
-    },
     orderBy: {
       createdAt: "desc",
     },
@@ -26,7 +23,8 @@ const CategoriesPage = async ({
     return {
       id: category.id,
       name: category.name,
-      billboardLabel: category.billboard.label,
+      slogan: category.slogan,
+      imageUrl: category.imageUrl,
       createdAt: format(category.createdAt, "MMMM do, yyyy"),
     };
   });
