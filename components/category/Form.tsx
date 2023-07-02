@@ -134,7 +134,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({ initialData }) => {
                 <FormControl>
                   <ImageUpload
                     value={field.value ? [field.value] : []}
-                    disabled={loading}
+                    disabled={loading || field.value !== ""}
                     onChange={(url) => field.onChange(url)}
                     onRemove={() => field.onChange("")}
                   />
