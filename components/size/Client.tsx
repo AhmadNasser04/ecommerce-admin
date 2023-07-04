@@ -32,9 +32,6 @@ const SizeClient: React.FC<SizeClientProps> = ({ data }) => {
       </div>
       <Separator />
       <DataTable searchKey="name" columns={SizeColumns} data={data} />
-      <Heading title="Api" description="Api calls for Categories" />
-      <Separator />
-      <ApiList entityName="sizes" entityIdName="sizeId" />
     </>
   );
 };
