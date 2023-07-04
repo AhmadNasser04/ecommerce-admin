@@ -21,13 +21,15 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <ClientOnly>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <ToastProvider />
-            <StoreModal />
-            <body className={inter.className}>{children}</body>
-          </ThemeProvider>
-        </ClientOnly>
+        <body className={inter.className}>
+          <ClientOnly>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <ToastProvider />
+              <StoreModal />
+              {children}
+            </ThemeProvider>
+          </ClientOnly>
+        </body>
       </html>
     </ClerkProvider>
   );
